@@ -8,11 +8,17 @@ from services.tasks import send_welcome_letter_task
 
 
 class UserListAPI(generics.ListAPIView):
+    permission_classes = [
+        permissions.IsAdminUser
+    ]
     queryset = get_user_model().objects.all()
     serializer_class = UserSerializer
 
 
 class UserDetailAPI(generics.RetrieveAPIView):
+    permission_classes = [
+        permissions.IsAdminUser
+    ]
     queryset = User
     serializer_class = UserSerializer
 
