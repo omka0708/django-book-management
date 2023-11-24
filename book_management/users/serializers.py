@@ -30,4 +30,4 @@ class LoginSerializer(serializers.Serializer):
         user = authenticate(**attrs)
         if user and user.is_active:
             return user
-        raise serializers.ValidationError("Некорректные данные")
+        raise serializers.ValidationError("Неверный логин или пароль.")
