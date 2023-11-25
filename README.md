@@ -32,6 +32,14 @@ Run this command at the working directory */django-book-management*:
 
     docker compose up --build
 
+## Create superuser
+Database already have superuser `root:omka2061`.
+If you want to create your superuser, use:
+
+    docker exec -it books-django python manage.py createsuperuser
+
+> Don't use Git Bash on windows for this command, use PowerShell
+
 ## Register API
 ### Register
 #### Request
