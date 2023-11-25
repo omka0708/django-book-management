@@ -8,6 +8,7 @@ from services.tasks import send_welcome_letter_task
 
 
 class UserListAPI(generics.ListAPIView):
+    # View for getting all users (GET)
     permission_classes = [
         permissions.IsAdminUser
     ]
@@ -16,6 +17,7 @@ class UserListAPI(generics.ListAPIView):
 
 
 class UserDetailAPI(generics.RetrieveAPIView):
+    # View for getting specific user (GET)
     permission_classes = [
         permissions.IsAdminUser
     ]
@@ -24,6 +26,7 @@ class UserDetailAPI(generics.RetrieveAPIView):
 
 
 class CurrentUserDetailAPI(generics.RetrieveAPIView):
+    # View for getting current user (GET)
     permission_classes = [
         permissions.IsAuthenticated
     ]
@@ -34,6 +37,7 @@ class CurrentUserDetailAPI(generics.RetrieveAPIView):
 
 
 class RegisterAPI(generics.GenericAPIView):
+    # View for user registration (POST)
     serializer_class = RegisterSerializer
 
     def post(self, request, *args, **kwargs):
@@ -46,6 +50,7 @@ class RegisterAPI(generics.GenericAPIView):
 
 
 class LoginAPI(generics.GenericAPIView):
+    # View for user login (POST)
     serializer_class = LoginSerializer
 
     def post(self, request, *args, **kwargs):
